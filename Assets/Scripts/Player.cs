@@ -6,8 +6,10 @@ public class Player : MonoBehaviour
     public float speed = 5f;
 
     private Rigidbody2D rb;
-    private Vector2 moveDirection;
+    private Vector2 _moveDirection;
     private InputAction moveAction;
+
+    public Vector2 moveDirection { get => _moveDirection; set => _moveDirection = value; }
 
     private void Start()
     {
@@ -25,12 +27,12 @@ public class Player : MonoBehaviour
 
     private void Update()
     {
-        moveDirection = moveAction.ReadValue<Vector2>();
+        _moveDirection = moveAction.ReadValue<Vector2>();
     }
 
     private void FixedUpdate()
     {
-        rb.MovePosition(rb.position + moveDirection * speed * Time.fixedDeltaTime);
+        rb.MovePosition(rb.position + _moveDirection * speed * Time.fixedDeltaTime);
     }
 
     private void OnEnable()
