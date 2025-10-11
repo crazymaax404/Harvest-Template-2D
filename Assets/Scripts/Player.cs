@@ -5,17 +5,21 @@ public class Player : MonoBehaviour
 {
     [SerializeField] private float speed = 5f;
     [SerializeField] private float runSpeed = 8f;
+    [SerializeField] private float rollSpeed = 10f;
 
     private float initialSpeed;
     private bool _isRunning = false;
+    private bool _isRolling = false;
 
     private Rigidbody2D rb;
     private Vector2 _moveDirection;
     private InputAction moveAction;
     private InputAction runAction;
+    private InputAction rollAction;
 
     public Vector2 moveDirection { get => _moveDirection; set => _moveDirection = value; }
     public bool isRunning { get => _isRunning; set => _isRunning = value; }
+    public bool isRolling { get => _isRolling; set => _isRolling = value; }
 
     private void Start()
     {
@@ -32,13 +36,18 @@ public class Player : MonoBehaviour
         runAction = new InputAction("Run", InputActionType.Button);
         runAction.AddBinding("<Keyboard>/leftShift");
 
+        rollAction = new InputAction("Roll", InputActionType.Button);
+        rollAction.AddBinding("<Keyboard>/space");
+
         moveAction.Enable();
         runAction.Enable();
+        rollAction.Enable();
     }
 
     private void Update()
     {
         OnRun();
+        OnRoll();
     }
 
     private void FixedUpdate()
@@ -57,12 +66,14 @@ public class Player : MonoBehaviour
     {
         moveAction?.Disable();
         runAction?.Disable();
+        rollAction?.Disable();
     }
 
     private void OnDestroy()
     {
         moveAction?.Dispose();
         runAction?.Dispose();
+        rollAction?.Dispose();
     }
 
     #region Movement
@@ -89,6 +100,21 @@ public class Player : MonoBehaviour
         {
             speed = initialSpeed;
             isRunning = false;
+        }
+    }
+
+    void OnRoll()
+    {
+        if (rollAction.WasPressedThisFrame())
+        {
+            speed = rollSpeed;
+            isRolling = true;
+        }
+
+        if (rollAction.WasReleasedThisFrame())
+        {
+            speed = initialSpeed;
+            isRolling = false;
         }
     }
 
