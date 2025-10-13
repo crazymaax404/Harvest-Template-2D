@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5ec01bd36a20f6428bbe2395195a6a7, type: 3}
+  m_Name: NPC_1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueSettings
+  actor: {fileID: 1843826860530238586, guid: 80d7ebc0ed90b9442ba070b99eb06912, type: 3}
+  speakerSprite: {fileID: 0}
+  text: 
+  dialogues:
+  - actorName: "Mo\xE7a"
+    profile: {fileID: 2037729144460287187, guid: edcea60bd6b536743be017762832639c, type: 3}
+    language:
+      portuguese: "Ol\xE1!"
+      english: 
+      spanish: 
+  - actorName: "Voc\xEA"
+    profile: {fileID: 1702722092792225050, guid: edcea60bd6b536743be017762832639c, type: 3}
+    language:
+      portuguese: "Voc\xEA est\xE1 bem?"
+      english: 
+      spanish: 
+  - actorName: "Mo\xE7a"
+    profile: {fileID: 2037729144460287187, guid: edcea60bd6b536743be017762832639c, type: 3}
+    language:
+      portuguese: "To sim, mas voc\xEA ja viu que eu sei falar em tr\xEAs linguas
+        diferentes?"
+      english: 
+      spanish: 
