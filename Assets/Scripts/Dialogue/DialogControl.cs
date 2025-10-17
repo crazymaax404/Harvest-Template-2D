@@ -5,6 +5,10 @@ using TMPro;
 
 public class DialogControl : MonoBehaviour
 {
+    [System.Serializable]
+    public enum idiom { pt, en, es };
+    public idiom currentIdiom;
+
     [Header("Components")]
     public GameObject dialoguePanel;
     public Image profileSprite;
@@ -46,9 +50,23 @@ public class DialogControl : MonoBehaviour
 
     public void NextDialogueLine()
     {
-        index++;
-        speechText.text = "";
-        StartCoroutine(TypeDialogue());
+        if (speechText.text == dialogueLines[index])
+        {
+            if (index < dialogueLines.Length - 1)
+            {
+                index++;
+                speechText.text = "";
+                StartCoroutine(TypeDialogue());
+            }
+            else
+            {
+                speechText.text = "";
+                index = 0;
+                isShowing = false;
+                dialoguePanel.SetActive(false);
+                dialogueLines = null;
+            }
+        }
     }
 
     public void Speech(string[] lines)

@@ -20,18 +20,18 @@ MonoBehaviour:
     profile: {fileID: 2037729144460287187, guid: edcea60bd6b536743be017762832639c, type: 3}
     language:
       portuguese: "Ol\xE1!"
-      english: 
-      spanish: 
+      english: Hellooo
+      spanish: HOLA!
   - actorName: "Voc\xEA"
     profile: {fileID: 1702722092792225050, guid: edcea60bd6b536743be017762832639c, type: 3}
     language:
       portuguese: "Voc\xEA est\xE1 bem?"
-      english: 
-      spanish: 
+      english: Are u ok?
+      spanish: OKAY?
   - actorName: "Mo\xE7a"
     profile: {fileID: 2037729144460287187, guid: edcea60bd6b536743be017762832639c, type: 3}
     language:
       portuguese: "To sim, mas voc\xEA ja viu que eu sei falar em tr\xEAs linguas
         diferentes?"
-      english: 
-      spanish: 
+      english: Yes, i do speak in another languages
+      spanish: si, falo otras linguas
