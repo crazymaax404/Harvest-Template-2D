@@ -19,11 +19,13 @@ public class DialogControl : MonoBehaviour
     [Header("Settings")]
     public float typingSpeed;
 
-    private bool isShowing;
+    private bool _isShowing;
     private int index;
     private string[] dialogueLines;
 
     public static DialogControl instance;
+
+    public bool isShowing { get { return _isShowing; } set { _isShowing = value; } }
 
     private void Awake()
     {
